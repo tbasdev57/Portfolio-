@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@mixin mobile-only{
+    @media screen and (max-width:599px) {
+        flex-direction: column !important
+    }
+}
+$cd-btn: #011c37;
+$cd-txt: white ;
+
+body {
+    
+    font-family: 'Ubuntu';
+    color: $cd-txt !important;
+    height: 100vh;
+    align-items: flex-start;
+    justify-content: center;
+    /* background: rgb(39,123,125);
+    background: linear-gradient(151deg, rgba(39,123,125,1) 0%, rgba(96,132,157,1) 50%, rgba(197,231,219,1) 100%); */
+    /* background: rgb(39,123,125);
+background: linear-gradient(151deg, rgba(39,123,125,1) 0%, rgba(205,122,215,1) 50%, rgba(197,231,219,1) 100%); */
+background: rgb(47,59,77);
+background: linear-gradient(47deg, rgba(47,59,77,1) 0%, rgba(6,39,82,1) 100%);
+    background-attachment: fixed;
+}
+@mixin gradient-color-title{
+    background: -webkit-linear-gradient(47deg,#1d8edc 0%, #12baa1 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    ;
+}
+
+.button {
+    background: $cd-btn;
+    color: $cd-txt;
+    border: $cd-btn 1px solid;
+    padding:10px 15px;
+    border-radius: 15px;
+    transition-property: transform;
+    transition-duration: 400ms;
+    margin: 10px;
+    &:hover {
+        transform: scale(1.15);
+    }
+    &__color{
+        @include gradient-color-title;
+        &--smaller{
+            padding:3px 7px;
+        }
+    }
+    
+}
+
+h1{
+    
+    @include gradient-color-title;
+}
+a{
+    text-decoration: none !important;
+    color:$cd-txt !important ;
+}
+li{
+    list-style:  none;
+}
+.img-project{
+    width: 50%;
+    border-radius: 10px;
+}
+
+.active{
+    font-size:large;
+    text-shadow: 1px 1px 2px,0 0 0.3em #333;
+}
+.heightpage{
+    margin-top: 170px;
+    margin-bottom:170px ;
+}
+.row{
+    @include mobile-only;    
+    
+}
+.hidden{
+    display: none !important;    
+    background-color: white;
+    transition: all 450ms
+
+}
